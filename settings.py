@@ -68,7 +68,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
 )
 
-ROOT_URLCONF = 'newProject.urls'
+ROOT_URLCONF = 'urls'
 
 TEMPLATE_DIRS = (
 )
@@ -80,7 +80,8 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'common'
+    'common',
+    'account',
 )
 
 LOGGING = {
