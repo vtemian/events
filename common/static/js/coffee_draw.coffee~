@@ -1,0 +1,67 @@
+# /js/coffee_draw.coffee
+# Our main sketch object:
+coffee_draw = (p5) ->
+	
+	p5.setup = () ->
+
+		p5.size $(window).width(), $(window).height()
+		p5.background(0)
+
+	p5.draw = () ->
+		@positioning = [
+			{'y': 0, 'x': 2},
+			{'y': 1, 'x': 0},
+			{'y': 1, 'x': 1},
+			{'y': 1, 'x': 2},
+			{'y': 1, 'x': 3},
+			{'y': 1, 'x': 4},
+			{'y': 2, 'x': 2},
+			{'y': 3, 'x': 1},
+			{'y': 3, 'x': 2},
+			{'y': 3, 'x': 3},
+		]
+
+		@plane = new Plane(p5, {
+			'positioning': @positioning,
+		})
+		@plane.draw()
+			
+class PlanePart
+	constructor: (@p5, opts) ->
+		@width = 50
+		@height = 50
+		@x = opts.x
+		@y = opts.y
+		
+	draw: () ->
+		#draw if we have a position
+		return unless @x >= 0 and @y >= 0
+		
+		#color to fill
+		@p5.fill(253,0,7)
+
+		# draw a rect
+		@p5.rect(@x*@width, @y*@height, @width, @height)
+
+class Plane
+	constructor: (@p5, opts) ->
+		#get plane position	
+		@positioning = opts.positioning
+		@parts = []
+		@partsColor = opts.partsColor
+		
+	draw: () ->
+		for coordinates in @positioning
+			do (coordinates, @p5, @parts, @partsColor) ->
+				planePart = new PlanePart(@p5, {
+					x: coordinates.x,
+					y: coordinates.y,
+					fillColor: @partsColor
+				})
+				planePart.draw()
+				
+$(document).ready ->
+	canvas = document.getElementById "processing"
+	processing = new Processing(canvas, coffee_draw)
+  	
+  	
