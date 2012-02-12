@@ -2,7 +2,7 @@
         "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-    <title>Simle newProject</title>
+    <title>Agregator</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
@@ -34,19 +34,71 @@
     <script src="{{ STATIC_URL }}js/coffee-script.js"></script>
 
     {% block extrahead %}
+        <script type="text/coffeescript" src="{{ STATIC_URL }}coffee/coffee_draw.coffee"></script>
+        <script src="{{ STATIC_URL }}bootstrap/js/bootstrap-transition.js"></script>
+        <script src="{{ STATIC_URL }}bootstrap/js/bootstrap-alert.js"></script>
+        <script src="{{ STATIC_URL }}bootstrap/js/bootstrap-modal.js"></script>
+        <script src="{{ STATIC_URL }}bootstrap/js/bootstrap-dropdown.js"></script>
+        <script src="{{ STATIC_URL }}bootstrap/js/bootstrap-scrollspy.js"></script>
+        <script src="{{ STATIC_URL }}bootstrap/js/bootstrap-tab.js"></script>
+        <script src="{{ STATIC_URL }}bootstrap/js/bootstrap-tooltip.js"></script>
+        <script src="{{ STATIC_URL }}bootstrap/js/bootstrap-popover.js"></script>
+        <script src="{{ STATIC_URL }}bootstrap/js/bootstrap-button.js"></script>
+        <script src="{{ STATIC_URL }}bootstrap/js/bootstrap-collapse.js"></script>
+        <script src="{{ STATIC_URL }}bootstrap/js/bootstrap-carousel.js"></script>
+        <script src="{{ STATIC_URL }}bootstrap/js/bootstrap-typeahead.js"></script>
         
     {% endblock %}
 </head>
 <body>
 
     {% block header %}
+               <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="#">Agregator - the new best shit ever</a>
+          <div class="nav-collapse">
+            <ul class="nav">
+              {% block nav %}
+              {% endblock %}
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
     {% endblock %}
-
+<div class="container">
     {% block content %}
     {% endblock %}
 
+{% block search %}
+
+    <div class="btn-group">
+  <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+    Sorteaza
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu">
+        <li>
+            <a href="#">primachestie</a>
+        </li>
+        <li>
+            <a href="#">adouachestie</a>
+        </li>
+        <li>
+            <a href="#">atreiachestie</a>
+        </li>
+  </ul>
+</div>
+{% endblock %}
+</div>
     <footer>
-        <p>&copy; Company 2012</p>
+        <p>&copy; Outclan 2012</p>
     </footer>
 </body>
 </html>

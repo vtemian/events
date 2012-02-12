@@ -1,11 +1,29 @@
 {% extends 'base.html' %}
 
-{% block extrahead %}
-    <script type="text/coffeescript" src="{{ STATIC_URL }}coffee/coffee_draw.coffee"></script>
-{% endblock %}
-
-{% block header %}
-{% endblock %}
-
 {% block content %}
+{% endblock %}
+
+{% block search %}
+          <form action="">
+            <input type="text" placeholder="Search" />
+          </form>
+
+    <div class="btn-group">
+  <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+    Sorteaza
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu">
+        <li>
+            <a href="#">primachestie</a>
+        </li>
+        <li>
+            <a href="#">adouachestie</a>
+        </li>
+        <li>
+            <a href="#">atreiachestie</a>
+        </li>
+  </ul>
+</div>
+
 {% endblock %}
