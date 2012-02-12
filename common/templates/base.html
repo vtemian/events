@@ -34,19 +34,25 @@
     <script src="{{ STATIC_URL }}js/coffee-script.js"></script>
 
     {% block extrahead %}
-        <script type="text/coffeescript" src="{{ STATIC_URL }}coffee/coffee_draw.coffee"></script>
-        <script src="{{ STATIC_URL }}bootstrap/js/bootstrap-transition.js"></script>
-        <script src="{{ STATIC_URL }}bootstrap/js/bootstrap-alert.js"></script>
-        <script src="{{ STATIC_URL }}bootstrap/js/bootstrap-modal.js"></script>
-        <script src="{{ STATIC_URL }}bootstrap/js/bootstrap-dropdown.js"></script>
-        <script src="{{ STATIC_URL }}bootstrap/js/bootstrap-scrollspy.js"></script>
-        <script src="{{ STATIC_URL }}bootstrap/js/bootstrap-tab.js"></script>
-        <script src="{{ STATIC_URL }}bootstrap/js/bootstrap-tooltip.js"></script>
-        <script src="{{ STATIC_URL }}bootstrap/js/bootstrap-popover.js"></script>
-        <script src="{{ STATIC_URL }}bootstrap/js/bootstrap-button.js"></script>
-        <script src="{{ STATIC_URL }}bootstrap/js/bootstrap-collapse.js"></script>
-        <script src="{{ STATIC_URL }}bootstrap/js/bootstrap-carousel.js"></script>
-        <script src="{{ STATIC_URL }}bootstrap/js/bootstrap-typeahead.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+        <script src="http://twitter.github.com/bootstrap/1.4.0/bootstrap-dropdown.js"></script>
+        <link rel="stylesheet" href="http://twitter.github.com/bootstrap/1.4.0/bootstrap.min.css">
+
+{#        <script type="text/coffeescript" src="{{ STATIC_URL }}coffee/coffee_draw.coffee"></script>#}
+{#        <script src="{{ STATIC_URL }}bootstrap/js/bootstrap-transition.js"></script>#}
+{#        <script src="{{ STATIC_URL }}bootstrap/js/bootstrap-alert.js"></script>#}
+{#        <script src="{{ STATIC_URL }}bootstrap/js/bootstrap-modal.js"></script>#}
+{#        <script src="{{ STATIC_URL }}bootstrap/js/bootstrap-dropdown.js"></script>#}
+{#        <script src="{{ STATIC_URL }}bootstrap/js/bootstrap-scrollspy.js"></script>#}
+{#        <script src="{{ STATIC_URL }}bootstrap/js/bootstrap-tab.js"></script>#}
+{#        <script src="{{ STATIC_URL }}bootstrap/js/bootstrap-tooltip.js"></script>#}
+{#        <script src="{{ STATIC_URL }}bootstrap/js/bootstrap-popover.js"></script>#}
+{#        <script src="{{ STATIC_URL }}bootstrap/js/bootstrap-button.js"></script>#}
+{#        <script src="{{ STATIC_URL }}bootstrap/js/bootstrap-collapse.js"></script>#}
+{#        <script src="{{ STATIC_URL }}bootstrap/js/bootstrap-carousel.js"></script>#}
+{#        <script src="{{ STATIC_URL }}bootstrap/js/bootstrap-typeahead.js"></script>#}
+{#        <script src="{{ STATIC_URL }}bootstrap/js/bootstrap.js"></script>#}
+{#        <script src="{{ STATIC_URL }}bootstrap/js/bootstrap.min.js"></script>#}
         
     {% endblock %}
 </head>
@@ -61,42 +67,32 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a class="brand" href="#">Agregator - the new best shit ever</a>
+          <a class="brand" href="#">Agregator - the best thing we did since facebook</a>
           <div class="nav-collapse">
             <ul class="nav">
-              {% block nav %}
+                <div class="span3 offset5">
+              {% block search %}
               {% endblock %}
+                </div>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
       </div>
     </div>
     {% endblock %}
+
 <div class="container">
-    {% block content %}
-    {% endblock %}
 
-{% block search %}
 
-    <div class="btn-group">
-  <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-    Sorteaza
-    <span class="caret"></span>
-  </a>
-  <ul class="dropdown-menu">
-        <li>
-            <a href="#">primachestie</a>
-        </li>
-        <li>
-            <a href="#">adouachestie</a>
-        </li>
-        <li>
-            <a href="#">atreiachestie</a>
-        </li>
-  </ul>
+{% block content %}{% endblock %}
+{#{% block search %}{% endblock %}#}
+{% block menu %}{% endblock %}
+
+
+
 </div>
-{% endblock %}
-</div>
+
+
     <footer>
         <p>&copy; Outclan 2012</p>
     </footer>

@@ -1,29 +1,33 @@
 {% extends 'base.html' %}
 
-{% block content %}
-{% endblock %}
-
 {% block search %}
           <form action="">
             <input type="text" placeholder="Search" />
           </form>
+{% endblock %}
 
-    <div class="btn-group">
-  <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-    Sorteaza
-    <span class="caret"></span>
-  </a>
-  <ul class="dropdown-menu">
-        <li>
-            <a href="#">primachestie</a>
-        </li>
-        <li>
-            <a href="#">adouachestie</a>
-        </li>
-        <li>
-            <a href="#">atreiachestie</a>
-        </li>
+{% block menu %}
+  <div id="test-div">
+  <ul class="tabs">
+{#  <li class="active"><a href="">Search</a></li>#}
+  <li class="dropdown" data-dropdown="dropdown" >
+      <a href="#" class="dropdown-toggle">Event Type</a>
+      <ul class="dropdown-menu">
+          <li><a href="#">Party</a></li>
+          <li><a href="#">Meeting</a></li>
+          <li><a href="#">Hackathon</a></li>
+      </ul>
+      <form action="">
+            <input type="text" placeholder="Search" />
+          </form>
+  </li>
   </ul>
-</div>
+  </div>
+
+  <script>
+  $(document).ready(function () {
+          $('#test-div').dropdown();
+      });
+  </script>
 
 {% endblock %}

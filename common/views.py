@@ -6,4 +6,4 @@ def home(request):
         context = {}
         return render_to_response('login.html', context, context_instance=RequestContext(request))
     else:
-        return render(request, 'login.html')
+        return render(request, 'home.html')
